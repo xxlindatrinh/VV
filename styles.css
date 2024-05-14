@@ -82,7 +82,7 @@ input[type="checkbox"]:checked ~ .container{
     content:attr(data-text);
     position: absolute;
     width: 100%;
-    color:#ffffff;
+    color:#000000;
     transition: 700ms ease-in-out;
 }
 
@@ -91,7 +91,8 @@ input[type="checkbox"]:checked ~ .container{
     border: none;
     outline: none;
     font-size: 70px;
-    color: white;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
     margin: 0;
   }
   /* Style the subnav content - positioned absolute */
@@ -101,14 +102,14 @@ input[type="checkbox"]:checked ~ .container{
     flex-direction: column;
     position: inherit;
     left: 65%;
-    background-color: red;
+    background-color: rgb(255, 255, 255);
     width: 100%;
     z-index: 1;
   }
   
   /* Style the subnav links */
   .subnav-content a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 50px;
   }
@@ -280,6 +281,7 @@ input[type="checkbox"]:checked ~ .container{
     font-weight: bold;
     margin-top: 10px;
     color: #fff;
+    left: 15%; 
   }
   
   .title {
@@ -288,12 +290,13 @@ input[type="checkbox"]:checked ~ .container{
     font-weight: bold;
     margin-top: 10px;
     color: #fff;
+    left: 15%; 
   }
   
   .button {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
+    bottom: 50px;
+    left: 15%; 
     transform: translateX(-50%);
     background-color: #000;
     color: #fff;
@@ -302,11 +305,43 @@ input[type="checkbox"]:checked ~ .container{
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-  }
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.button:hover {
+    background-color: #333; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
 
   .box:nth-child(3n) {
     margin-right: 0; /* Fjern højremargin for hver tredje boks på rækken */
   }
+
+  .buy-button {
+    font-weight: bold; /* Gør skriften fed */
+    font-size: 18px; /* Gør skriftstørrelsen større */
+    padding: 10px 20px; /* Giver mere plads omkring teksten */
+    background-color: #000000; /* Ændrer baggrundsfarven */
+    border-color: #ffffff; /* Ændrer kantfarven */
+    margin-top: 10px; /* Tilføjer lidt margin over knappen */
+    position: absolute;
+    bottom: 5px;
+    left: 15%; 
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.buy-button:hover {
+    background-color: #333; /* Ændrer baggrundsfarven, når musen er over knappen */
+    border-color: #ffffff; /* Ændrer kantfarven, når musen er over knappen */
+}
 
   /*footer styling*/
 
