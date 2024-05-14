@@ -49,3 +49,17 @@ function changeImg() {
 }
 
 window.onload = changeImg;
+
+
+// Event side dropdown //
+
+document.querySelectorAll('.dropdown-btn')[1].addEventListener('click', function() {
+    var checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.style.display = 'none';
+    });
+    var links = document.querySelectorAll('.dropdown-content a');
+    links.forEach(function(link) {
+      link.style.display = 'block';
+    });
+  });
