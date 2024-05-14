@@ -19,19 +19,17 @@
     <label for="circleMenu"><i class="fas fa-bars"></i></label>
     <div class="container">
         <div class="menu">
-            <a href="#/">Home</a>
-            <a href="#/">about</a>
+            <a href="#/">Events</a>
+            <a href="#/">Kontakt og udlejning</a>
             <div class="subnav">
-                <button class="subnavbtn" id="servicesBtn">Services <i class="fa fa-caret-right"></i></button>
+                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village <i class="fa fa-caret-right"></i></button>
                 <div class="subnav-content" id="servicesMenu">
-                  <a href="#bring">Bring</a>
-                  <a href="#deliver">Deliver</a>
-                  <a href="#package">Package</a>
-                  <a href="#express">Express</a>
+                  <a href="#bring">Bliv en del af teamet</a>
+                  <a href="#deliver">Historie</a>
+                  <a href="#package">Aarhus Volume</a>
                 </div>
               </div>
-            <a href="#/">projects</a>
-            <a href="#/">contact</a>
+            <a href="#/">F&Q</a>
         </div>
     </div>
 
@@ -42,7 +40,7 @@
         <div id="hojre_forside">
             <h1>VOLUME VILLAGE</h1>
             <div>
-                <p>Volume Village er byens kulturelle vækstlagsplatform.
+                <p>Volume Village er byens kulturelle vækstlagsplatform. <br><br>
                     Et multifunktionelt spillested, rodfæstet i den Aarhusianske vækslagskultur, 
                     med fokus på urbane, progressive genrer. </p>
             </div>
@@ -55,7 +53,7 @@
 
     <div class="forside" id="event_slider">
         <div id="venstre_opdag">
-            <img src="img/crowd.png" alt="">
+            <img src="img/forside/crowd.png" alt="">
         </div>
         <div id="hojre_opdag">
             <h1>OPDAG VOLUME VILLAGE</h1>
@@ -75,23 +73,20 @@
         </div>
         <div><p>djnkjdk</p>
         </div>
-    </div>
+
+        <div id="footer_adresse">
+            <div>
+                <p>adresse</p>
+            </div>
+            <div>
+                copyright
+            </div>
+        </div>
+
         <div id="footer_VV">
             <h1>VOLUME VILLAGE</h1>
         </div>
     </footer>
 
-    <script>
-        // JavaScript to toggle the visibility of the submenu when clicking on Services
-        document.getElementById("servicesBtn").addEventListener("click", function() {
-            const submenu = document.getElementById("servicesMenu");
-            // Toggle the visibility of the submenu
-            if (submenu.style.display === "none" || submenu.style.display === "") {
-                submenu.style.display = "flex"; // Show submenu
-            } else {
-                submenu.style.display = "none"; // Hide submenu
-            }
-        });
-    </script>
 </body>
 </html>
