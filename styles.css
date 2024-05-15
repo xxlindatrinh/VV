@@ -17,6 +17,7 @@ h1 {
 p {
     font-family: 'Helvetica';
     color: white;
+    font-weight: lighter;
 }
 
 body {
@@ -498,12 +499,18 @@ img.displayUpcomming_slide{
 .event-box p {
   font-family: 'Helvetica', sans-serif;
   font-size: 18px;
+  font-weight: lighter;
   margin: 10px 0;
   text-align: left;
 }
 
 .event-box .address {
-  font-size: 16px; /* Different size for the address paragraph */
+  font-size: 16px; 
+}
+
+.event-box .price {
+  font-size: 16px; 
+  font-family: 'Helvetica', sans-serif;
 }
 
 .event-box .divider {
@@ -513,6 +520,12 @@ img.displayUpcomming_slide{
   margin: 10px 0;
 }
 
+.date-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .ticket-box {
   display: flex;
   align-items: center;
@@ -520,17 +533,45 @@ img.displayUpcomming_slide{
 }
 
 .ticket-box button {
-  background-color: #000;
+  background-color: #1b1919;
   color: #fff;
   border: none;
   padding: 10px;
   cursor: pointer;
+  border: 1px solid #fff;
+  width: 30px; 
+  height: 30px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  
 }
 
 .ticket-box span {
   margin: 0 10px;
   font-size: 18px;
+  color: white;
 }
+
+.add-to-cart {
+  background-color: #1b1919;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;  /* Center the button horizontally */
+  display: block;     /* Make sure the button is treated as a block element */
+  width: fit-content;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #EDFFB8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
 .spotify-player {
   position: absolute;
   top: calc(50% + 450px); 

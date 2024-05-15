@@ -104,3 +104,4 @@ document.querySelectorAll('.dropdown-btn')[1].addEventListener('click', function
       link.style.display = 'block';
     });
   });
+// Tilføj til kurv //
