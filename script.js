@@ -35,7 +35,7 @@ images[5] = 'img/forside/neonpriest.jpg';
 images[6] = 'img/forside/fest.jpg';
 images[7] = 'img/forside/greenstage.jpg';
 
-//skifter billede
+//forside skifter billede hurtigt
 function changeImg() {
     document.slide.src = images[i];
 
@@ -50,6 +50,47 @@ function changeImg() {
 
 window.onload = changeImg;
 
+//forside image slider
+
+const slides = document.querySelectorAll(".slides img")
+let slideIndex = 0;
+let intervalId = null;
+
+//initializeSlider();
+document.addEventListener("DOMContentLoaded", initializeSlider);
+
+function initializeSlider(){
+
+    if(slides.length > 0){
+        slides[slideIndex].classList.add("displayUpcomming_slide");
+        intervalId = setInterval(nextUpcomming_slide, 5000);
+    }
+}
+function showUpcomming_slide(index){
+
+    if(index >= slides.length){
+        slideIndex = 0;
+    }
+    else if(index <0){
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displayUpcomming_slide");
+    });
+    slides[slideIndex].classList.add("displayUpcomming_slide");
+}
+
+
+function prevUpcomming_slide(){
+    clearInterval(intervalId);
+    slideIndex--;
+    showUpcomming_slide(slideIndex);
+}
+function nextUpcomming_slide(){
+    slideIndex++;
+    showUpcomming_slide(slideIndex);
+}
 
 // Event side dropdown //
 
