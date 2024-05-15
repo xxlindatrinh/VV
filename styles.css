@@ -479,11 +479,42 @@ img.displayUpcomming_slide{
 
 .event-box {
   width: 562px;
-  height: 598px;
+  height: 647px;
   background-color: #1b1919; 
   position: absolute;
   top: calc(50% + 450px); 
   left: 173px; 
+  padding: 20px;
+}
+
+.event-box h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.event-box p {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.ticket-box {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ticket-box button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.ticket-box span {
+  margin: 0 10px;
+  font-size: 18px;
 }
 .spotify-player {
   position: absolute;
@@ -491,10 +522,12 @@ img.displayUpcomming_slide{
   right: 173px; 
 }
 .eventto-box {
+  position: absolute;
   width: 496px;
   height: 247px;
-  background-color: #ccc; /* Change to desired gray color */
-  margin-top: 20px; /* Adjust margin to position it below the Spotify player */
+  background-color: #1b1919; 
+  top: calc(50% + 850px); 
+  right: 173px; 
 }
   /*footer styling*/
 
