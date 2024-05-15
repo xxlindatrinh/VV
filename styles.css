@@ -457,10 +457,17 @@ img.displayUpcomming_slide{
   display: block;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  background-color: #191818;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
 }
 
   .box-container {
