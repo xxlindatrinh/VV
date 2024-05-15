@@ -1,20 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // JavaScript to toggle the visibility of the submenu when clicking on Services
-    document.getElementById("servicesBtn").addEventListener("click", function() {
-        const submenu = document.getElementById("servicesMenu");
-        const contentDivs = document.querySelectorAll(".content .sub-content");
-        
-        // Toggle the visibility of the submenu
-        if (submenu.style.display === "none" || submenu.style.display === "") {
-            submenu.style.display = "flex"; // Show submenu
-            adjustOpacity(contentDivs, 0.5); // Adjust opacity of content divs
-        } else {
-            submenu.style.display = "none"; // Hide submenu
-            adjustOpacity(contentDivs, 1); // Reset opacity of content divs
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const servicesBtn = document.getElementById('servicesBtn');
+    const servicesMenu = document.getElementById('servicesMenu');
+  
+    servicesBtn.addEventListener('click', function() {
+      servicesMenu.classList.toggle('active'); // Toggle the active class
     });
-});
+  });
 
+  
 // Function to adjust the opacity of content divs
 function adjustOpacity(divs, opacity) {
     divs.forEach(function(div) {
