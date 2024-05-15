@@ -436,7 +436,11 @@ img.displayUpcomming_slide{
   top: calc(50% + 450px); 
   left: 173px; 
 }
-
+.spotify-player {
+  position: absolute;
+  top: calc(50% + 450px); 
+  right: 173px; 
+}
 
   /*footer styling*/
 
