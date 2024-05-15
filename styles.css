@@ -585,6 +585,29 @@ img.displayUpcomming_slide{
   top: calc(50% + 850px); 
   right: 173px; 
 }
+
+.section-title {
+  font-size: 18px;
+  font-family: 'Georama';
+  font-weight: bold; 
+  color: #ffffff; 
+}
+
+.section-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ffffff; 
+  font-family: 'Helvetica', sans-serif;
+}
+
+.details-section, .location-section {
+  float: left; /* Align sections side by side */
+  width: 50%; /* Each section takes half of the container */
+  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
   /*footer styling*/
 
 
