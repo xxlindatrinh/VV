@@ -488,7 +488,12 @@ img.displayUpcomming_slide{
   top: calc(50% + 450px); 
   right: 173px; 
 }
-
+.eventto-box {
+  width: 496px;
+  height: 247px;
+  background-color: #ccc; /* Change to desired gray color */
+  margin-top: 20px; /* Adjust margin to position it below the Spotify player */
+}
   /*footer styling*/
 
 
