@@ -10,6 +10,10 @@ h1, h2, h3 {
     color: #ffffff;
 }
 
+h1 {
+  text-align: center;
+}
+
 p {
     font-family: 'Helvetica';
     color: white;
@@ -17,6 +21,7 @@ p {
 
 body {
   background-color: black;
+  overflow-y: scroll;
 }
 
 *{
@@ -456,6 +461,32 @@ img.displayUpcomming_slide{
 .buy-button:hover {
     background-color: #333; /* Ændrer baggrundsfarven, når musen er over knappen */
     border-color: #ffffff; /* Ændrer kantfarven, når musen er over knappen */
+}
+
+
+/* Inde på Astrid event */
+
+.astrid-img {
+  width: 1092px;
+  height: 603px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 230px;
+}
+
+.event-box {
+  width: 562px;
+  height: 598px;
+  background-color: #1b1919; 
+  position: absolute;
+  top: calc(50% + 450px); 
+  left: 173px; 
+}
+.spotify-player {
+  position: absolute;
+  top: calc(50% + 450px); 
+  right: 173px; 
 }
 
   /*footer styling*/
