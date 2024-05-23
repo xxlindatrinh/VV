@@ -1,117 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dette er et informativt website til TrøjborgBryg som sælger alkoholfriøl med fokus på
-  autencitet, kvalitet, innovation og sundhed">
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <meta name="description" content="Dette er et informativt website til Volume Village som hoster events og arrangementer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/forside/logo_nav.png">
+    <title>Volume Village</title>
 </head>
 <body>
     <input type="checkbox" id="circleMenu">
     <label for="circleMenu"><i class="fas fa-bars"></i></label>
+    
     <div class="container">
         <div class="menu">
-            <a href="#/">Events</a>
-            <a href="#/">Kontakt og udlejning</a>
+            <a href="club+venue.html" data-text="Events">Events</a>
+            <a href="error.html">Kontakt og udlejning</a>
             <div class="subnav">
-                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village <i class="fa fa-caret-right"></i></button>
-                <div class="subnav-content" id="servicesMenu">
-                  <a href="#bring">Bliv en del af teamet</a>
-                  <a href="#deliver">Historie</a>
-                  <a href="#package">Aarhus Volume</a>
-                </div>
-              </div>
-            <a href="#/">F&Q</a>
+                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village</button>
+            </div>
+            <a href="faq.html">F&Q</a>
+        </div>
+        
+        <div class="subnav-content-container">
+            <div class="subnav-content" id="servicesMenu">
+                <a href="team.html">Bliv en del af teamet</a>
+                <a href="historie.html">Historie</a>
+                <a href="aarhusvol.html">Aarhus Volume</a>
+            </div>
         </div>
     </div>
 
-    <div class="logo">
-        <img src="img/forside/logo_nav.png" alt="VV Logo">
+    <a href="index.html">
+        <div class="logo">
+            <img src="img/forside/logo_nav.png" alt="VV Logo">
+        </div>
+    </a>
+
+    <div class="ENG">
+        <img src="img/forside/ENG.png" alt="ENG language">
     </div>
 
     <div class="forside_grid">
         <div id="venstre_forside">
-            <img name="slide" width="800" height="800">
+            <img src="img/forside/Greta.jpg" id="slide" width="800" height="800" alt="image slider">
         </div>
         <div id="hojre_forside">
-            <h1>VOLUME VILLAGE</h1>
             <div>
-                <p>Volume Village er byens kulturelle vækstlagsplatform. <br><br>
+                <img id="vv_logo_forside" src="img/forside/VVlogoforside.png" alt="VV logo">
+            </div>
+            <div>
+                <p>Volume Village er byens kulturelle vækstlagsplatform. 
                     Et multifunktionelt spillested, rodfæstet i den Aarhusianske vækslagskultur, 
                     med fokus på urbane, progressive genrer. </p>
             </div>
+            <button class="forside_button scroll-to-opdag">OM VOLUME VILLAGE</button>
         </div>
     </div>
 
     <div id="forside_scroll">
-        <img src="img/VVlillelogo.png" alt="">
+        <img src="img/VVlillelogo.png" alt="VV lille logo">
     </div>
 
-    <div id="upcomming">
-        <h1>UPCOMMING EVENTS</h1>
+    <div id="upcoming">
+        <h1>UPCOMING EVENTS</h1>
     </div>
 
     <div class="slider">
-        <div class="slides" id="tekst_slider">
-            <div class="upcomming_slide" id="tekst_slider">
+        <div class="slides">
+            <div class="upcoming_slide displayUpcoming_slide">
                 <img src="img/image_slider/lea.avif" alt="image #1">
-                <p>FRE 17. maj // 19:00-23:00</p>
-                <h2>Lea Eyóbjørg</h2>
             </div>
-            <img class="upcomming_slide" src="img/image_slider/lea.avif" alt="image #1">
-            <img class="upcomming_slide" src="img/image_slider/omar.png" alt="image #2">
-            <img class="upcomming_slide" src="img/image_slider/astrid.jpg" alt="image #3">
-            <img class="upcomming_slide" src="img/image_slider/brohaven.jpg" alt="image #4">
-            <img class="upcomming_slide" src="img/image_slider/alexander.png" alt="image #5">
+            <div class="upcoming_slide"><img src="img/image_slider/lea.avif" alt="image #1"></div>
+            <div class="upcoming_slide"><img src="img/image_slider/omar.png" alt="image #2"></div>
+            <div class="upcoming_slide"><img src="img/image_slider/astrid.jpg" alt="image #3"></div>
+            <div class="upcoming_slide"><img src="img/image_slider/brohaven.jpg" alt="image #4"></div>
+            <div class="upcoming_slide"><img src="img/image_slider/alexander.png" alt="image #5"></div>
         </div>
-        <button class="prev" onclick="nextUpcomming_slide()">&#10094</button>
-        <button class="next" onclick="nextUpcomming_slide()">&#10095</button>
+        <button class="prev" onclick="prevUpcoming_slide()">&#10094;</button>
+        <button class="next" onclick="nextUpcoming_slide()">&#10095;</button>
+    </div>
+
+    <div class="forside_grid" id="forside_festtrygt">
+        <div id="venstre_opdag">
+            <video id="background-video" autoplay muted loop>
+                <source src="img/forside_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="hojre_opdag">
+            <h2>FEST TRYGT</h2>
+            <div>
+                <p>Hos os er vi forpligtet til at skabe mere end bare events; vi stræber efter at 
+                    skabe et trygt og inkluderende miljø for alle vores gæster. <br><br>
+                    Et 'safe space', hvor du kan udtrykke dig frit, føle dig velkommen og opleve 
+                    kulturelle begivenheder uden frygt for diskrimination eller chikane.
+                    Vi tror på, at et trygt miljø er afgørende for at skabe meningsfulde oplevelser</p>
+            </div>
+        </div>
     </div>
 
     <div class="forside_grid" id="forside_opdag">
-        <div id="venstre_opdag">
-            <img src="img/forside/crowd.png" alt="">
-        </div>
-        <div id="hojre_opdag">
-            <h1>OPDAG VOLUME VILLAGE</h1>
+        <div id="venstre_festtrygt">
+            <h2>OPDAG VOLUME VILLAGE</h2>
             <div>
-                <p>Volume Village er byens kulturelle vækstlagsplatform.
-                    Et multifunktionelt spillested, rodfæstet i den Aarhusianske vækslagskultur, 
-                    med fokus på urbane, progressive genrer. </p>
+                <p>Volume Village er et samlingspunkt for byudviklingsområdet i den yderste del af Aarhus K. / Den Grønne Kile, 
+                    hvorfra vi kan præge den fremtidige udvikling. Vi gør alt hvad vi kan for en bydel hvor musik, vækstlag og 
+                    ungdomskultur er omdrejningspunktet. <br><br>
+                    Volume Village er forankret i Aarhus Volume, der gennem de seneste 6 år har arbejdet i spændefeltet 
+                    mellem vækstlag og det mere etablerede kulturliv. </p>
             </div>
+            <div class="forside_button">
+                <a href="historie.html">LÆS MERE</a>
+            </div>
+        </div>
+        <div id="hojre_festtrygt">
+            <div>
+            <img src="img/forside/fftfu.png" alt="Feel free to fuck up">
+        </div>
         </div>
     </div>
 
-    
-    <footer class="footer">
-        <div id="footer_tekst">
+    <div class="forside_grid" id="forside_team">
+        <div id="venstre_forsideteam">
+            <h2>BLIV EN DEL AF TEAMET</h2>
             <div>
-            <p>skjhskhs</p>
-        </div>
-        <div><p>djnkjdk</p>
-        </div>
-
-        <div id="footer_adresse">
-            <div>
-                <p>adresse</p>
+                <p>Vi har altid bruge for flere hænder til vores team. 
+                    Så går du med en lille drøm om at blive en del af det fedeste team i Aarhus, 
+                    så tøv ikke - send os en ansøgning!</p>
             </div>
-            <div>
-                copyright
-            </div>
+            <div class="forside_button">
+            <a href="team.html">ANSØG HER</a>
         </div>
+        </div>
+        <div id="hojre_forsideteam">
+            <div class="img_multi_billeder">
+            <img src="img/forside/crew.jpg" alt="Billede af crewet">
+        </div>
+        <div class="img_forskudt_billeder">
+            <img src="img/forside/crewcontainer.jpg" alt="Teamet">
+        </div>
+        </div>
+    </div>
 
-        <div id="footer_VV">
+
+    <footer>
+        <div class="footer_stor">
+            <div id="gruppe1">
+                <div class="div1">
+                    <h2>BE A PART OF THE CREW</h2>
+                    <div id="join_us_button">
+                    <a href="team.html">JOIN US</a>
+                    </div>
+                </div>
+                <div class="div2">
+                    <h2>ÅBNINGSTIDER VARIERER, VI HAR SOM REGEL ALTID ÅBENT I WEEKENDEN<br><br>TJEK VORES EVENTS</h2>
+                </div>
+                <div class="div3" id="footer_navigation">
+                    <a href="events.html">EVENTS</a>
+                    <a href="kontaktudlejning.html">KONTAKT OG UDLEJNING</a>
+                    <a href="faq.html">F&Q</a>
+                    <div id="footer_opdag">
+                        <a href="historie.html">OPDAG VOLUME VILLAGE</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gruppe2">
+                <div class="div3">
+                    <div>
+                        <p>Thomas Koppels Gade 201, 8000 Aarhus C<br>
+                           Tlf: 22 73 19 08<br>
+                           Mail: kontakt@volumevillage.dk<br>
+                           Telefontid: 10.00 – 14.00</p>
+                    </div>
+                </div>
+                <div class="div4">
+                    <p><span>&copy;</span>Copyright 2024</p>
+                </div>
+            </div>
             <h1>VOLUME VILLAGE</h1>
         </div>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
