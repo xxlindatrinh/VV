@@ -1,16 +1,24 @@
 @font-face {
-  font-family: 'Helvetica'; /* Specify font family name */
+  font-family: 'Helvetica';
   src: url('HelveticaRoman.ttf');
 }
 
 h1, h2, h3 {
   font-family: 'Georama';
-  font-weight: 800; /* Georama ExtraBold */
+  font-weight: 800;
   color: #ffffff;
+  
 }
 
 h1 {
-text-align: center;
+  margin: 0;
+  margin-top:40px;
+  text-align: center;
+  font-size:70px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 p {
@@ -19,166 +27,400 @@ p {
 }
 
 body {
-background-color: black;
-overflow-y: scroll;
-margin: 0;
-padding: 0;
-font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+body {
+  background-color: black;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------Navigationsbar--------------------------------------------*/
+
 input[type="checkbox"] {
-display: none;
+  display: none;
 }
 
 label {
-width: 50px;
-height: 50px;
-background-color: rgb(255, 255, 255);
-border-radius: 50%;
-font-size: 20px;
-position: fixed;
-top: 20px;
-right: 20px;
-z-index: 2;
-cursor: pointer;
-display: flex;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  font-size: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
 }
 
 label i {
-margin: auto;
-color: #000000;
+  margin: auto;
+  color: #000000;
 }
 
 .container {
-width: 100%;
-height: 100%;
-background: rgb(255, 255, 255);
-position: fixed;
-top: 0;
-left: 0;
-clip-path: circle(25px at calc(100% - 45px) 45px);
-transition: all 500ms ease-in-out;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 500ms ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  z-index: 1;
 }
 
+
+
 input[type="checkbox"]:checked ~ .container {
-clip-path: circle(100%);
+  clip-path: circle(100%);
 }
 
 .menu {
-margin: auto;
-display: flex;
-flex-direction: column;
-align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  grid-column: span 3;
 }
 
 .menu a {
-text-decoration: none;
-color: rgb(0, 0, 0);
-font-size: 50px;
-font-weight: bold;
-margin: 14px 0;
+  font-family:'georama';
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 50px;
+  letter-spacing: 2px;
+  margin:14px 0;
+  transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for color and text-shadow */
 }
 
-.menu a::before {
-content: attr(data-text);
-position: absolute;
-width: 100%;
-color: #000000;
-transition: 700ms ease-in-out;
+.menu a:hover {
+  color: #ED4556; /* Change to desired hover text color */
 }
+
+.subnav {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  grid-column: span 2;
+}
+
 
 .subnav .subnavbtn {
-border: none;
-outline: none;
-font-size: 50px;
-font-weight: bold;
-color: rgb(0, 0, 0);
-margin: 0;
+  border: none;
+  outline: none;
+  font-family:'georama';
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin: 14px 0;
+  background-color: #fff;
+  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for color and text-shadow */
 }
 
-.subnav-content-container {
+.subnav .subnavbtn:hover {
+  color: #ED4556; /* Change to desired hover text color */
+}
+.subnav-content-container{
   display: flex;
-  justify-content: flex-end; /* Align content to the right */
-  position: relative; /* Add position relative to make absolute positioning work */
+  justify-content: center;
 }
 
 .subnav-content {
-  display: none;
+  position: relative;
   flex-direction: column;
   justify-content: center;
-  top: 0;
-  right: 0; /* Position to the right */
   background-color: rgb(255, 255, 255);
   width: 100%;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
 
 .subnav-content a {
   color: rgb(0, 0, 0);
   text-decoration: none;
+  font-family:'georama';
   font-size: 50px;
+  letter-spacing: 2px;
+  margin:14px 0;
+  transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for color and text-shadow */
 }
 
-/*lille logo som content på forsiden*/
-
-.logo {
-position: absolute;
-top: 20px;
-left: 20px;
-z-index: 999;
+.subnav-content a:hover {
+  color: #ED4556; /* Change to desired hover text color */
 }
 
-.logo img {
-width: 70px;
-height: auto;
-}
-
-/*footer*/
-#footer_tekst {
-display: grid;
-grid-template-columns: 1fr 1fr;
-background-color: white;
-}
-
-#footer_VV {
-display: flex;
-justify-content: center;
-text-align: center;
-}
-
-#footer_VV h1 {
-color: white;
-font-size: 150px;
-padding-top: 30px;
-display: flex;
-letter-spacing: 15px;
-}
-
-.footer {
-width: 100%;
-height: 100vh;
-background-color: black;
-}
-
-#footer_tekst p {
-color: white;
+.menu.submenu-open a {
+  opacity: 0.4; /* Set opacity for menu items when submenu is open */
 }
 
 /* Logo forside */
+
 .logo {
-position: absolute;
-top: 20px; 
-left: 20px; 
-z-index: 999; 
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  }
+  
+  .logo img {
+  width: 70px;
+  height: auto;
+  z-index: 2;
+  position: fixed;
+  }
+
+  /* ENG language */
+
+.ENG {
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  }
+  
+  .ENG img {
+  width: 45px;
+  z-index: 1;
+  }
+
+/* Logo forside */
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  }
+  
+  .logo img {
+  width: 70px;
+  height: auto;
+  z-index: 2;
+  position: fixed;
+  }
+
+  /* ENG language */
+
+.ENG {
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  }
+  
+  .ENG img {
+  width: 45px;
+  z-index: 1;
+  }
+/*--------------------------------------BUTTONS og HOVER-------------------------------------------------*/
+
+
+.forside_button {
+  background-color: #1b1919;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s, color 0.3s; 
 }
 
-.logo img {
-width: 70px; 
-height: auto; 
+.forside_button a{
+  text-decoration: none;
+  color: inherit;
 }
+
+.forside_button:hover {
+  border-color: #EDFFB8;
+  color: #EDFFB8;
+}
+
+.ENG img:hover{
+  box-shadow: 0px 0px 10px rgb(255, 255, 255); 
+}
+
+/*--------------------------------------------FOOTER------------------------------------------------------*/
+
+footer {
+  margin: 0;
+  padding: 15px;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+}
+
+.footer_stor {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Ensure the footer_stor fills the entire screen */
+  flex-direction: column;
+  background-color: #ffffff; /* This will override the previous background color */
+}
+
+.footer_stor h1 {
+  display: flex;
+  margin: 0; /* Remove default margin */
+  font-size: 140px;
+  letter-spacing: 15px;
+  color: #000000;
+  align-self: center;
+}
+
+#gruppe1{
+  padding-top: 80px;
+  padding-left: 30px;
+  padding-right:30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Push divs to each side */
+}
+
+#gruppe2{
+  padding-top:20px;
+  padding-left: 30px;
+  padding-right:30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Push divs to each side */
+  align-items: flex-end;
+}
+
+.div1{
+  margin: 0;
+  padding: 0;
+}
+
+.div1 h2{
+  margin:0;
+  color:#000;
+  font-size: 28px;
+  width: 200px;
+}
+
+.div2 h2{
+  margin:0;
+  color:#000;
+  font-size: 20px;
+  width: 200px;
+}
+
+.div2{
+  margin:0;
+  padding:0;
+}
+
+.div3 {
+  margin: 0;
+  padding: 0;
+  width: 200px; /* Fixed width for navigation */
+}
+
+.div3,
+.div4{
+  margin:0;  
+}
+
+.div3 p,
+.div4 p{
+  margin:0;  
+  padding:0;
+}
+
+#join_us_button {
+  background-color: #fff;
+  color: #1b1919;
+  border: 1px solid #1b1919;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  transition: background-color 0.3s, box-shadow 0.3s, border-color 0.3s, color 0.3s; 
+}
+
+#join_us_button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#join_us_button:hover {
+  background-color: #EDFFB8;
+  color: #1b1919;
+  border-color: #1b1919;
+}
+
+
+#footer_navigation {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+#footer_navigation a {
+  font-family: 'Georama';
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 28px;
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background-color changes */
+}
+
+
+
+#footer_navigation a {
+  font-family: 'Georama';
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 30px;
+  letter-spacing: 3px;
+  transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for color and text-shadow */
+}
+
+#footer_navigation a:hover {
+  color: #ED4556; /* Change to desired hover text color */
+}
+
+
+#gruppe2{
+  width: 100%;
+  height: 100%;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+#gruppe2 p{
+  color: black;
+}
+
+span {
+  /* Add styles for the copyright symbol */
+  /* For example: */
+  font-size: 20px;
+  margin-right: 5px; /* Adjust as needed */
+}
+
+/*-------------------------------------------FORSIDE-------------------------------------------------*/
 
 /* Styling af grid layout på forside*/
 #grid {
@@ -190,62 +432,78 @@ height: auto;
     grid-template-columns: 1fr 1fr;
 }
 
-/*styling af øverst på forsiden */
-
-  #venstre_forside img{
-    width: 100%;
-    height: 100vh;/* Set height to fill the screen vertically */
-    object-fit: cover; /* Maintain aspect ratio and cover entire container */
-    display: block; /* Ensure the image behaves like a block element */
-  }
-
-  #hojre_forside{
+  /* Style for full viewport height sections */
+#hojre_forside,
+#venstre_forsideteam,
+#venstre_festtrygt,
+#hojre_opdag {
     width: 100%;
     height: 100vh;
     background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    justify-content: center;
+}
 
-  #hojre_forside h1{
-    color:#ffffff;
-    font-size: 70px;
-    font-weight: 900;
-    margin-top:70px;
-  }
+/* Specific styling for the h1 in #hojre_forside */
+#hojre_forside h1 {
+    margin: 0;
+    padding-bottom: 40px;
+}
 
+/* Common image styling */
+#hojre_forside img,
+#venstre_forside img {
+    width: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    display: block; /* Ensure the image behaves like a block element */
+}
 
-  #hojre_forside p{
+#venstre_forside img {
+    height: 100vh; /* Set height to fill the screen vertically */
+}
+
+/* Styling af skriftstørrelser på forsiden */
+#hojre_opdag h2,
+#venstre_festtrygt h2,
+#venstre_forsideteam h2 {
+    margin: 0;
     color: #ffffff;
-    font-size: 18px;
-    margin: 80px;
-  }
+    font-size: 46px;
+    font-weight: 900;
+}
 
+#hojre_opdag p,
+#venstre_festtrygt p,
+#venstre_forsideteam p,
+#hojre_forside p {
+    color: #ffffff;
+    line-height: 1.5;
+}
 
+#hojre_opdag p,
+#venstre_festtrygt p,
+#venstre_forsideteam p {
+    font-size: 20px;
+    width: 400px;
+}
 
+#hojre_forside p {
+    padding-top: 30px;
+    font-size: 24px;
+    width: 400px;
+}
 
-/* lille logo før content på forside */
-
-  #forside_scroll{
+/* Styling for the small logo before the main content */
+#forside_scroll {
     display: flex;
     justify-content: center;
     background-color: black;
     padding-top: 40px;
-  }
-
-  /*upcomming events*/
-
-#upcomming{
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
 }
 
-#upcomming h1{
-  font-size: 70px;
-}
+  /*upcoming events*/
 
 .slider{
   position:relative;
@@ -257,26 +515,24 @@ height: auto;
 
 .slider img {
   width: 100%; /* Reset width */
-  height: 80vh; /* Set height to 100vh */
+  height: 70vh; /* Set height to 100vh */
   padding-left: 48px; /* Adjust padding as needed */
   padding-right: 48px; /* Adjust padding as needed */
-  object-fit: cover; /* Ensure images cover the entire container */
+  object-fit: contain; /* Ensure images cover the entire container */
   display: none;
 }
-img.displayUpcomming_slide{
+img.displayUpcoming_slide{
   display:block;
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
-
 
 .slider button{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  padding: 15px;
+  padding: 12px;
   background-color: black;
   color:white;
   border:none;
@@ -298,60 +554,157 @@ img.displayUpcomming_slide{
 
   /* opdag volume village på forside */
 
-  #forside_opdag{
-    padding-top: 40px;
-  }
-  #venstre_opdag img{
-    width: 100%;
-    height: 100vh;/* Set height to fill the screen vertically */
-    object-fit: cover; /* Maintain aspect ratio and cover entire container */
-    display: block; /* Ensure the image behaves like a block element */
-  }
-
-  #hojre_opdag{
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #hojre_opdag h1{
-    color:#ffffff;
-    font-size: 50px;
-    margin-top:70px;
-  }
-
-  /* Club volume og volume venue */
-
-  #venstre_clubvenue, #hojre_clubvenue {
-    position: relative;
+  #venstre_opdag video {
+    padding: 10px;
     width: 100%;
     height: 100vh; /* Set height to fill the screen vertically */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    display: block; /* Ensure the video behaves like a block element */
+}
+
+
+  #hojre_festtrygt img{
+    width: 100%;
+    height: 100vh; /* Set height to fill the screen vertically */
+    object-fit: contain; /* Maintain aspect ratio and cover entire container */
+    overflow: hidden;
+  }
+
+   /* vores team på forside */
+
+  #venstre_forsideteam{
+    width: 100%;
+  }
+
+  #hojre_forsideteam{
+    height: 90vh; /* Set height to fill the screen vertically */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space the text containers */
-    align-items: center; /* Center text horizontally */
-    cursor: pointer;
+    overflow: hidden;
+  }
+
+
+  .img_multi_billeder img, .img_forskudt_billeder img {
+    width: 100%; /* Set the width to fill the container */
+    height: 300px; /* Set a fixed height for both images */
+    padding-bottom: 30px;
+    object-fit: cover; /* Scale the image to cover the container without distorting */
+    overflow: hidden;
+}
+
+/* Apply specific margin and padding for the images in the .img_forskudt_billeder class */
+.img_forskudt_billeder img {
+    margin-left: 120px;
+    overflow: hidden;
+}
+
+
+/*--------------CONTENT KOMMER IND FRA SIDEN PÅ FORSIDE OG HISTORIE-------------------------*/
+
+/*------------------------------------------Historie----------------------------------------------*/
+
+ .historie-container {
+  padding-top:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45vh;
+  overflow: hidden; /* Ensures any overflowing content is hidden */
+}
+
+.historie-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container without distortion */
+}
+
+.historie_flashcard{
+  margin:0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+}
+
+#initiativ p,
+#mangfoldighed p,
+#baeredygtighed p{
+  width: 300px;
+  padding: 40px;
+  line-height: 1.5;
+}
+
+#hojre_baeredygtighed p,
+#venstre_kulturhus p {
+  font-size: 18px;
+  line-height:1.5;
+  width: 500px;
+}
+
+#hojre_baeredygtighed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+#venstre_baeredygtighed img{
+  width: 100%;
+  height: 100vh; /* Set height to fill the screen vertically */
+  object-fit: contain; /* Maintain aspect ratio and cover entire container */
+}
+
+
+#hojre_kulturhus img{
+width: 100%;
+height: 100vh;
+object-fit: contain;
+}
+
+#venstre_kulturhus {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*--------------------------------------Club volume og Volume Venue--------------------------------------------*/
+
+#venstre_clubvenue, #hojre_clubvenue {
+position: relative;
+width: 100%;
+height: 100vh; /* Set height to fill the screen vertically */
+display: flex;
+flex-direction: row;
+justify-content: space-between; /* Space the text containers */
+align-items: center; /* Center text horizontally */
+cursor: pointer;
 }
 
 #hojre_clubvenue img {
-    width: 100%;
-    height: 100vh; /* Set height to fill the screen vertically */
-    object-fit: cover; /* Maintain aspect ratio and cover entire container */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+  width: 100%;
+  height: 100vh; /* Set height to fill the screen vertically */
+  object-fit: cover; /* Maintain aspect ratio and cover entire container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .play-on-hover {
-    background-image: url(img/vvclub.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    z-index: 0;
+  background-image: url(img/vvclub.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
 }
 
 .play-on-hover:hover {
@@ -390,225 +743,1025 @@ img.displayUpcomming_slide{
 }
 
 .tekst_clubvenue {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    color: white;
-    font-size: 16px;
-    z-index: 1;
-}
-
-.tekst_clubvenue.top {
-    top: 40px; /* Adjust as necessary for desired top margin */
-}
-
-.tekst_clubvenue.bottom {
-    bottom: 20px; /* Adjust as necessary for desired bottom margin */
-}
-
-   /*event side*/
-   #overskrift_arrangementer {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 150px; 
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-right: 20px;
-}
-
-.dropdown-btn {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
   position: absolute;
-  background-color: black;
-  border: 1px solid white;
+  width: 100%;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  font-size: 16px;
   z-index: 1;
 }
 
-.dropdown-content a {
+.h1_clubvenue {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
   color: white;
+  font-size: 32px;
+  z-index: 1;
+}
+
+.tekst_clubvenue.top {
+  top: 40px; /* Adjust as necessary for desired top margin */
+}
+
+
+
+.tekst_clubvenue.center h1 {
+  text-decoration: none;
+  font-size: 100px; /* Adjust as necessary */
+}
+
+.tekst_clubvenue.bottom {
+  bottom: 20px; /* Adjust as necessary for desired bottom margin */
+}
+
+/*------------------------------------ styling af Aarhus Volume----------------------------------- */
+
+#aarhusvol{
+  margin: 0;
   padding: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#aarhusvol h1{
+  font-size:70px;
+}
+
+#aarhusvol p{
+  font-size:24px;
+  line-height: 1.5;
+}
+
+#venstre_aarhusvol,
+#hojre_aarhusvol{
+  width: 100%;
+  padding:0;
+  background-color: white;
+}
+
+#hojre_aarhusvol img{
+  width: 100%;
+  height: 100vh; /* Set height to fill the screen vertically */
+  object-fit: contain; /* Maintain aspect ratio and cover entire container */
+}
+
+.aarhusvol_button {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Set height to fill the screen vertically */
+}
+
+.aarhusvol_button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio and fit inside the container */
+}
+
+.overlay-button {
+  position:absolute;
+  top: 90%;
+  left:10%;
+  background-color: #fff;
+  color: #1b1919;
+  border: 1px solid #1b1919;
+  padding: 10px;
+  font-size:18px;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
+.overlay-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.overlay-button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+
+
+#venstre_aarhusvol video{
+  width: 100%;
+  height: 100vh; /* Set height to fill the screen vertically */
+  object-fit: cover; /* Maintain aspect ratio and cover entire container */
+  display: block; /* Ensure the video behaves like a block element */
+}
+
+/*----------------------------------------------EVENT SIDE ------------------------------------------*/
+#overskrift_arrangementer {
+  position: relative;
+  margin: 150px auto 0; 
+  text-align: center;
+  font-size: 35px;
+}
+
+.text {
+color: #fff; 
+margin-top: 10px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+margin-right: 10px;
+margin-top: 100px;
+margin-left: 20px;
+}
+
+.dropdown-btn {
+background-color: black;
+color: white;
+border: 1px solid white;
+padding: 10px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 200px;
+}
+
+.dropdown-btn i {
+margin-left: 10px;
+transition: transform 0.3s;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: black;
+border: 1px solid white;
+z-index: 1;
+width: 200px;
+}
+
+.dropdown-content a {
+color: white;
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+text-decoration: none; /* Fjerner stregen under hyperlinks */
 }
 
 .dropdown-content a:hover {
-  background-color: grey;
+background-color: grey;
 }
 
 .dropdown-content input[type="checkbox"] {
-  display: inline;
-  margin-right: 5px;
+margin-left: 10px;
 }
 
-/* Vis dropdown-indhold, når knappen klikkes */
 .dropdown:hover .dropdown-content {
-  display: block;
+display: block;
 }
 
+.dropdown.open .dropdown-content {
+display: block;
+}
+
+.dropdown.open .dropdown-btn i {
+transform: rotate(180deg);
+}
+
+/* Event bokse */
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+margin-top: 50px;
+flex:2;
 }
 
 .box-container {
+  width: 450px; /* Adjust the width as needed */
+  height: 500px;
   background-color: #191818;
   padding: 10px;
+  margin: 10px;
   box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-  .box-container {
-    width: 472px;
-    height: 580px;
-    background-color: #191818;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  
-  .box-image {
-    width: 415px;
-    height: 234px;
-    border-radius: 10px;
-  }
-  
-  .tekst_venue {
-    font-family: Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #fff;
-    left: 15%; 
-  }
-  
-  .title {
-    font-family: Georama, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #fff;
-    left: 15%; 
-  }
-  
-  .button {
-    position: absolute;
-    bottom: 50px;
-    left: 15%; 
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+.box-image {
+  width: 415px;
+  height: 234px;
+  border-radius: 10px;
+  align-items: center;
 }
+
+.tekst_venue {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+  left: 15%; 
+}
+
+.title {
+  font-family: Georama, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #fff;
+  left: 15%; 
+}
+
+.button {
+  position: absolute;
+  top:340px;
+  left: 15%; 
+  transform: translateX(-50%);
+  background-color: #191818;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s; 
+}
+
 
 .button:hover {
-    background-color: #333; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  background-color: #EDFFB8; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+  color: #000000;
 }
 
-  .box:nth-child(3n) {
-    margin-right: 0; /* Fjern højremargin for hver tredje boks på rækken */
-  }
+.box:nth-child(3n) {
+  margin-right: 0; /* Fjerner højremargin for hver tredje boks på rækken */
+}
 
-  .buy-button {
-    font-weight: bold; /* Gør skriften fed */
-    font-size: 18px; /* Gør skriftstørrelsen større */
-    padding: 10px 20px; /* Giver mere plads omkring teksten */
-    background-color: #000000; /* Ændrer baggrundsfarven */
-    border-color: #ffffff; /* Ændrer kantfarven */
-    margin-top: 10px; /* Tilføjer lidt margin over knappen */
-    position: absolute;
-    bottom: 5px;
-    left: 15%; 
-    transform: translateX(-50%);
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s; 
+.buy-button {
+  font-weight: bold; 
+  font-size: 22px; 
+  padding: 10px 20px; 
+  margin-left: 35px;
+  background-color: #191818; 
+  border-color: #ffffff; 
+  margin-top: 10px; 
+  position: absolute;
+  bottom: 5px;
+  left: 50%; 
+  transform: translateX(-50%);
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s; 
+  margin-bottom: 20px;
+  left: 15%;
 }
 
 .buy-button:hover {
-    background-color: #333; /* Ændrer baggrundsfarven, når musen er over knappen */
-    border-color: #ffffff; /* Ændrer kantfarven, når musen er over knappen */
+  background-color: #EDFFB8; /* Ændrer baggrundsfarven, når musen er over knappen */
+  border-color: #ffffff; /* Ændrer kantfarven, når musen er over knappen */
+  color: #000000;
 }
+/*---------------------------------INDE PÅ ASTRID EVENT -----------------------------------*/
 
-
-/* Inde på Astrid event */
 
 .astrid-img {
-  width: 1092px;
+  width: 1140px;
   height: 603px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 230px;
+  margin-top: 250px;
+  padding-bottom: 20px;
+}
+
+#overskrift_astrid {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 150px; 
+}
+
+#overskrift_astrid h1 {
+  font-size: 40px;
 }
 
 .event-box {
   width: 562px;
-  height: 598px;
+  height: 680px;
   background-color: #1b1919; 
   position: absolute;
   top: calc(50% + 450px); 
-  left: 173px; 
+  left: 185px; 
+  padding: 40px;
 }
+
+.event-box h1 {
+  font-size: 24px;
+  font-family: 'Georama';
+    font-weight: 800; /* Georama ExtraBold */
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.event-box p {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.event-box .address {
+  font-size: 16px; 
+}
+
+.event-box .price {
+  font-size: 16px; 
+  font-family: 'Helvetica', sans-serif;
+}
+
+.event-box .divider {
+  border: 0;
+  height: 1px;
+  background: #ffffff;
+  margin: 10px 0;
+}
+
+.date-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.ticket-box {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.ticket-box button {
+  background-color: #1b1919;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  width: 30px; 
+  height: 30px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  
+}
+
+.ticket-box span {
+  margin: 0 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.add-to-cart {
+  background-color: #1b1919;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 70px auto;  /* Centrerer knappen */
+  display: block;
+  width: fit-content;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #EDFFB8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
 .spotify-player {
   position: absolute;
   top: calc(50% + 450px); 
-  right: 173px; 
+  right: 200px; 
+}
+.eventto-box {
+  position: absolute;
+  width: 496px;
+  height: 280px;
+  background-color: #1b1919; 
+  top: calc(50% + 850px); 
+  right: 200px; 
 }
 
-  /*footer styling*/
-
-
-  .footer{
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-  }
-#footer_tekst{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: white;
-
-}
-#footer_VV{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.section-title {
+  font-size: 18px;
+  font-family: 'Georama';
+  font-weight: bold; 
+  color: #ffffff; 
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 7px;
 }
 
-#footer_VV h1{
-    color: white;
-    font-size: 150px;
-    padding-top:30px;
-    display: flex;
-    letter-spacing: 15px; /* Adjust the value as needed */
-}
-
-#footer_tekst p{
-    color: white;
-}
+.section-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ffffff; 
+  font-family: 'Helvetica', sans-serif;
+  padding-left: 15px;
   
+}
+
+.details-section, .location-section {
+  float: left; 
+  width: 50%; 
+  box-sizing: border-box; 
+  margin-bottom: 30px;
+  padding-left: 15px;
+}
+
+.box-link .box-container {
+  cursor: pointer;
+}
+/*---------------------------------BLIV EN DEL AF TEAMET --------------------------------------*/
+
+.image-container {
+  width: 1512px; 
+  height: 474px;
+  overflow: hidden; 
+  margin-top: 100px;
+}
+
+.team-img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.animated-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 82px;
+  font-weight: 800; /* Georama ExtraBold */
+  font-family: 'Georama', sans-serif;
+  white-space: nowrap;
+}
+
+.team-heading {
+  font-size: 70px; 
+  font-family: 'Georama';
+  font-weight: 800; /* Georama ExtraBold */
+  color: #ffffff;
+}
+.team-text {
+  font-size: 24px; 
+  line-height: 1.8;
+  color: #ffffff; 
+  font-family: 'Helvetica', sans-serif;
+  text-align: center;
+}
+
+.sidebar-box {
+  position: absolute; 
+  width: 662px; 
+  height: 1100px; 
+  background-color: #1b1919; 
+  left: 380px; 
+  transform: translateX(-50%); 
+}
+
+.sidebar-heading {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.sidebar-text {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 30px;
+  margin-top: 5px;
+}
+
+.secondsidebar-box {
+  position: absolute; 
+  width: 662px; 
+  height: 388px; 
+  background-color: #1b1919; 
+  left: 380px; 
+  transform: translateX(-50%);
+  margin-top: 1150px; /* Afstand til den første grå boks */
+}
+
+.grid-item {
+  background-color: #1b1919; 
+  width: 272px; 
+  height: 500px; 
+ 
+}
+
+.grid-image {
+  width: 272px; 
+  height: 310px; 
+  object-fit: cover;
+}
+
+
+.grid-text {
+  font-family: 'Georama';
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #818080;
+  text-align: center;
+  margin-bottom: 5px; 
+}
+
+.grid-subtext1 {
+  font-family: 'Georama';
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: center;
+  margin-bottom: 1px; 
+}
+
+.grid-subtext2 {
+  font-family: Helvetica, sans-serif; 
+  font-size: 14px; 
+  font-style: italic; 
+  text-align: center;
+  padding: 10px;
+  margin-top: 1px; 
+}
+.team-container {
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+}
+
+.content {
+  flex: 2;
+  
+  padding-left: 750px;
+}
+
+.custom-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.individual-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Fire bokse på hver række */
+  grid-gap: 15px; /* Tilføjer mellemrum mellem boksene */
+  margin-top: 20px; 
+  padding-left: 50px;
+}
+
+.image-item {
+  grid-column: span 2; /* Spænder over to kolonner for at skabe plads til billedet :) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-image {
+  width: 100%; /* Tilpasser billedet til containerens bredde */
+  height: auto; /* Bevarer billedets proportioner */
+}
+
+/* Styles for inputfelter og labels */
+.form-label {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ababab;
+  margin-left: 20px;
+}
+
+.form-field {
+  width: 543px;
+  height: 43px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
+  background-color: #3f3f3f;
+  color: #FFFFFF;
+}
+
+/* Stil for textarea */
+textarea.form-field {
+  height: 120px;
+  color: #FFFFFF;
+}
+
+/* Fokusstil */
+.form-field:focus {
+  outline: none;
+  border: 5px solid #EDFFB8;
+}
+
+/* Stil for ekstra textarea */
+.extra-field {
+  height: 350px!important;
+}
+
+.send-application {
+  background-color: #1b1919;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px; 
+  margin-left: 25px;
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.send-application:hover {
+  background-color: #EDFFB8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Stil for stjerner */
+.star-large {
+  width: 78px;
+  height: 78px;
+}
+
+.star-medium {
+  width: 61px;
+  height: 61px;
+}
+
+.star-small {
+  width: 35px;
+  height: 35px;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 3px;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+}
+
+.left-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 4px;
+}
+
+/*---------------------------------FAQ SIDE --------------------------------------*/
+
+.faqcontainer {
+  display:flex;
+  align-self: center;
+  width: 1421px;
+  height: 677px;
+  background-color: black;
+  border: 5px solid white;
+  margin-top: 120px;
+}
+
+.left-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-img {
+  max-width: 630px;
+  max-height: 621px;
+}
+
+.custom-text {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  font-family: 'Georama';
+  font-weight: 800; /* Georama ExtraBold */
+}
+
+.faq-containertwo {
+  display: flex;
+  padding: 50px;
+}
+
+.faq-nav {
+  flex: 1;
+  
+  background-color: #000000;
+  
+}
+
+.faq-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faq-nav ul li {
+  margin: 10px 0;
+}
+
+.faq-nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Georama';
+  font-size: 30px;
+  margin-left: 50px;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.faq-nav ul li a.active {
+  border-bottom: 2px solid #EDFFB8; /* Tilføj understeget farve */
+}
+
+.faq-content {
+  flex: 2;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  padding-left: 350px;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+  font-family: 'Georama';
+  position: relative;
+}
+.faq-nav ul li a:hover{
+  color: #EDFFB8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.faq-question:hover {
+  color: #EDFFB8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 0;
+}
+
+.faq-toggle {
+  font-size: 30px;
+  position: absolute; 
+    right: 0; 
+}
+
+
+/* ------------------------------MEDIA QUERIES--------------------------------------- */
+
+@media screen and (max-width: 480px){
+  h1, h2, h3 {
+    font-family: 'Georama';
+    font-weight: 800;
+    color: #ffffff;
+    
+  }
+  
+  h1 {
+    margin: 0;
+    margin-top:10px;
+    text-align: center;
+    font-size:24px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+  
+  p {
+    font-family: 'Helvetica';
+    color: white;
+    font-size: 14px;
+  }
+
+/*----------responsive---------------*/
+
+  .forside_grid{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+/*---------- buttons ----------*/
+.forside_button {
+  font-size:16px;
+}
+
+/* Logo forside */
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  }
+  
+  .logo img {
+  width: 60px;
+  height: auto;
+  z-index: 2;
+  position: fixed;
+  }
+
+
+  /* ENG language */
+
+  .ENG {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    }
+    
+    .ENG img {
+    width: 35px;
+    z-index: 1;
+    }
+
+  /*----------Navigationsbar----------*/
+  
+
+  /*----------FORSIDE-----------*/
+
+#venstre_festtrygt{
+    width: 100%;
+    height: 40vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#hojre_forsideteam{
+  height: 60vh;
+}
+#venstre_forsideteam,
+#hojre_forside,
+#hojre_opdag{
+  height: 30vh;
+}
+
+  #hojre_opdag p,
+  #venstre_festtrygt p,
+  #venstre_forsideteam p,
+  #hojre_forside p {
+      font-size: 14px;
+      width: auto; /* Adjust to fit within mobile screen */
+      padding: 0 10px; /* Add padding to ensure readability */
+  }
+
+  #hojre_opdag h2,
+  #venstre_festtrygt h2,
+  #venstre_forsideteam h2 {
+      font-size: 18px;
+  }
+
+  #forside_scroll {
+    display: none;
+  }
+
+  #venstre_forside img,
+  #hojre_festtrygt img {
+      height: 50vh; /* Allow height to adjust based on content */
+      object-fit: contain;
+  }
+
+  #hojre_forside img{
+    width: 400px;
+  }
+
+  #venstre_opdag video {
+    height: 60vh;
+  }
+
+  .slider{
+    margin: 0;
+  }
+
+  .slider img {
+      padding-left: 0;
+      padding-right: 0;
+      height: 60vh;
+  }
+
+  .slider button {
+      font-size: 1.5rem;
+  }
+
+  .img_forskudt_billeder img {
+    margin-left: 0px;
+}
+
+  /*----------Club Venue-----------*/
+
+  #venstre_clubvenue, #hojre_clubvenue {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space the text containers */
+    align-items: center; /* Center text horizontally */
+    padding: 10px;
+    height: 100%;
+    }
+
+    
+    #hojre_clubvenue img {
+      width: 100%;
+      object-fit: cover; /* Maintain aspect ratio and cover entire container */
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    
+    .tekst_clubvenue {
+      font-size: 14px;
+    }
+    
+    .tekst_clubvenue.top {
+      top: 16px; /* Adjust as necessary for desired top margin */
+    }
+    
+    .tekst_clubvenue.center h1 {
+      text-decoration: none;
+      font-size: 24px; /* Adjust as necessary */
+    }
+    
+    .tekst_clubvenue.bottom {
+      bottom: 14px; /* Adjust as necessary for desired bottom margin */
+    }
+
+    /*----------------footer----------------*/
+    
+}
+
