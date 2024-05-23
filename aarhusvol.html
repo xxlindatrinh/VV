@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dette er et informativt website til Volume Village som hoster events og arrangementer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/forside/logo_nav.png">
+    <title>Volume Village</title>
+</head>
+<body>
+    <input type="checkbox" id="circleMenu">
+    <label for="circleMenu"><i class="fas fa-bars"></i></label>
+    
+    <div class="container">
+        <div class="menu">
+            <a href="club+venue.html" data-text="Events">Events</a>
+            <a href="error.html">Kontakt og udlejning</a>
+            <div class="subnav">
+                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village</button>
+            </div>
+            <a href="faq.html">F&Q</a>
+        </div>
+        
+        <div class="subnav-content-container">
+            <div class="subnav-content" id="servicesMenu">
+                <a href="team.html">Bliv en del af teamet</a>
+                <a href="historie.html">Historie</a>
+                <a href="aarhusvol.html">Aarhus Volume</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html">
+        <div class="logo">
+            <img src="img/forside/logo_nav.png" alt="VV Logo">
+        </div>
+    </a>
+
+    <div class="ENG">
+      <img src="img/forside/ENG.png" alt="ENG language">
+  </div>
+
+    <div id="aarhusvol">
+    <h1>AARHUS VOLUME</h1>
+    <p>Volume Village er en dynamisk del af Århus Volume, hvor vi fejrer og fremmer den lokale kultur<br>  
+        gennem levende musik og kreative events. Oplev det pulserende kulturliv, som Århus Volume har <br> 
+        at byde på, og udforsk vores partners, projekter og events ved at besøge Århus Volume's hjemmeside.</p>
+    </div>
+
+    <div class="forside_grid" id="forside_opdag">
+        <div id="venstre_aarhusvol">
+            <video autoplay muted loop>
+                <source src="img/aarhusvol.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="hojre_aarhusvol">
+            <div class="aarhusvol_button">
+                <img src="img/aarhusvol.png" alt="Aarhus Volume">
+                    <div class="overlay-button">
+                    <a href="https://www.aarhusvolume.dk">Gå til Aarhus Volume</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_stor">
+            <div id="gruppe1">
+                <div class="div1">
+                    <h2>BE A PART OF THE CREW</h2>
+                    <div id="join_us_button">
+                    <a href="team.html">JOIN US</a>
+                </div>
+                </div>
+                <div class="div2">
+                    <h2>ÅBNINGSTIDER VARIERER, VI HAR SOM REGEL ALTID ÅBENT I WEEKENDEN<br><br>TJEK VORES EVENTS</h2>
+                </div>
+                <div class="div3" id="footer_navigation">
+                    <a href="events.html">EVENTS</a>
+                    <a href="kontaktudlejning.html">KONTAKT OG UDLEJNING</a>
+                    <a href="faq.html">F&Q</a>
+                    <div id="footer_opdag">
+                        <a href="historie.html">OPDAG VOLUME VILLAGE</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gruppe2">
+                <div class="div3">
+                    <div>
+                        <p>Thomas Koppels Gade 201, 8000 Aarhus C<br>
+                           Tlf: 22 73 19 08<br>
+                           Mail: kontakt@volumevillage.dk<br>
+                           Telefontid: 10.00 – 14.00</p>
+                    </div>
+                </div>
+                <div class="div4">
+                    <p><span>&copy;</span>Copyright 2024</p>
+                </div>
+            </div>
+            <h1>VOLUME VILLAGE</h1>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
