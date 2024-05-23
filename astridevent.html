@@ -1,69 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dette er et informativt website til TrøjborgBryg som sælger alkoholfriøl med fokus på
-  autencitet, kvalitet, innovation og sundhed">
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <meta name="description" content="Dette er et informativt website til Volume Village som hoster events og arrangementer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/forside/logo_nav.png">
+    <title>Volume Village</title>
 </head>
 <body>
     <input type="checkbox" id="circleMenu">
     <label for="circleMenu"><i class="fas fa-bars"></i></label>
+    
     <div class="container">
         <div class="menu">
-            <a href="#/">Events</a>
-            <a href="#/">Kontakt og udlejning</a>
+            <a href="club+venue.html" data-text="Events">Events</a>
+            <a href="error.html">Kontakt og udlejning</a>
             <div class="subnav">
-                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village <i class="fa fa-caret-right"></i></button>
-                <div class="subnav-content" id="servicesMenu">
-                  <a href="#bring">Bliv en del af teamet</a>
-                  <a href="#deliver">Historie</a>
-                  <a href="#package">Aarhus Volume</a>
-                </div>
-              </div>
-            <a href="#/">F&Q</a>
+                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village</button>
+            </div>
+            <a href="faq.html">F&Q</a>
+        </div>
+        
+        <div class="subnav-content-container">
+            <div class="subnav-content" id="servicesMenu">
+                <a href="team.html">Bliv en del af teamet</a>
+                <a href="historie.html">Historie</a>
+                <a href="aarhusvol.html">Aarhus Volume</a>
+            </div>
         </div>
     </div>
 
-    <div class="logo">
-        <img src="img/forside/logo_nav.png" alt="VV Logo">
-    </div>
-    <div id="overskrift_arrangementer">
+    <a href="index.html">
+        <div class="logo">
+            <img src="img/forside/logo_nav.png" alt="VV Logo">
+        </div>
+    </a>
+
+    <div class="ENG">
+      <img src="img/forside/ENG.png" alt="ENG language">
+  </div>
+    
+  <div>
+  <div>
+    <div id="overskrift_astrid">
         <h1>ASTRID ENGBERG | SANGERINDE, DJ, KOMPONIST & PRDOUCER</h1>
     </div>
 
     <img src="img/billde.webp" alt="Astrid Image" class="astrid-img">
     <div class="event-box">
         <h1>Astrid Engberg</h1>
-        <p>Volume Village – Thomas Koppels Gade 201, 8000 Aarhus C</p>
-        <p><strong>Fredag</strong><br>20. sep kl. 19:00 - 23:00</p>
-        <p><strong>Pris inkl. gebyr</strong><br>190,-</p>
+        <p class="address">Volume Village – Thomas Koppels Gade 201, 8000 Aarhus C</p>
+        <hr class="divider">
+
+        <div class="date-price">
+            <div class="date">
+                <p><strong>FREDAG</strong><br>20. sep kl. 19:00 - 23:00</p>
+            </div>
+            <div class="price">
+                <p><strong>PRIS INKL. GEBYR</strong><br>190,-</p>
+            </div>
+        </div>
+        <hr class="divider">
+
         <p>
             Den danske sangerinde, producer, komponist og DJ Astrid Engberg, København, udgav i september 2023 sit andet album Trust.<br><br>
             Astrid Engbergs musik spænder over moderne soul, R&B, nu jazz og moderne klassisk musik, og lytteren inviteres ind i et univers af både minimalistiske og tunge produktioner, personlige historier og spirituel søgen. En fortryllende stemme, der udtrykker både en oprigtig følsomhed og dyb styrke.
         </p>
+
         <div class="ticket-box">
             <button>-</button>
             <span>0</span>
             <button>+</button>
-            <button>Tilføj til kurven</button>
         </div>
+        <button class="add-to-cart">TILFØJ TIL KURVEN</button>
     </div>
+    
 
     <div class="spotify-player">
         <iframe style="border-radius:10px" src="https://open.spotify.com/embed/artist/1aCZzByicOHcS6WpNPwqXV?utm_source=generator&theme=0" width="496" height="360" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div class="eventto-box"></div>
-
+    <div class="eventto-box">
+        <div class="details-section">
+            <h2 class="section-title">DETALJER</h2>
+            <div class="section-text">
+                <p>Forsalg: 100 kr. (+gebyr)</p>
+                <p>Dørsalg: 125 kr. (+gebyr)</p>
+                <p>Døre åbner: 19:00</p>
+                <p>Support: 20:00</p>
+            </div>
+        </div>
+        <div class="location-section">
+            <h2 class="section-title">STED</h2>
+            <div class="section-text">
+                <p>Volume Village</p>
+                <p>Thomas Koppels Gade 201, Aarhus C 8000</p>
+                <p>Telefon: +45 41606076</p>
+                <p>E-mail: kontakt@volumevillage.dk</p>
+            </div>
+        </div>
     </div>
-
-
+</div>
+</body>
+</html>
