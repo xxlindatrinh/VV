@@ -1,37 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dette er et informativt website til TrøjborgBryg som sælger alkoholfriøl med fokus på
-  autencitet, kvalitet, innovation og sundhed">
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="styles.css">
-    <title></title>
+    <meta name="description" content="Dette er et informativt website til Volume Village som hoster events og arrangementer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Volume Village</title>
 </head>
-
 <body>
-    <div class="forside_grid">
-        <div id="venstre_clubvenue" class="play-on-hover">
-            <div class="tekst_clubvenue top">
-                <p>Bar & Natklub</p>
+    <input type="checkbox" id="circleMenu">
+    <label for="circleMenu"><i class="fas fa-bars"></i></label>
+    
+    <div class="container">
+        <div class="menu">
+            <a href="club+venue.html" data-text="Events">Events</a>
+            <a href="error.html">Kontakt og udlejning</a>
+            <div class="subnav">
+                <button class="subnavbtn" id="servicesBtn">Opdag Volume Village</button>
             </div>
-            <div class="tekst_clubvenue bottom">
-                <p>Natklub. Bar. Musik. Events.</p>
-            </div>
+            <a href="faq.html">F&Q</a>
         </div>
-        <div id="hojre_clubvenue" class="play-on-hover-right">
-            <div class="tekst_clubvenue top">
-                <p>Arrangementer</p>
-            </div>
-            <div class="tekst_clubvenue bottom">
-                <p>Workshops. Masterclasses. Konferencer. Hygge.</p>
+        
+        <div class="subnav-content-container">
+            <div class="subnav-content" id="servicesMenu">
+                <a href="team.html">Bliv en del af teamet</a>
+                <a href="historie.html">Historie</a>
+                <a href="aarhusvol.html">Aarhus Volume</a>
             </div>
         </div>
     </div>
+
+    <a href="index.html">
+        <div class="logo">
+            <img src="img/forside/logo_nav.png" alt="VV Logo">
+        </div>
+    </a>
+
+    <div class="forside_grid">
+        <a href="events.html">
+            <div id="venstre_clubvenue" class="play-on-hover">
+                <div class="tekst_clubvenue top">
+                    <p>Bar & Natklub</p>
+                </div>
+                <div class="h1_clubvenue">
+                    <h1>CLUB <br>
+                    VOLUME VILLAGE</h1>
+                </div>
+                <div class="tekst_clubvenue bottom">
+                    <p>Natklub. Bar. Musik. Events.</p>
+                </div>
+            </div>
+        </a>
+        <a href="arrangementer.html">
+            <div id="hojre_clubvenue" class="play-on-hover-right">
+                <div class="tekst_clubvenue top">
+                    <p>Arrangementer</p>
+                </div>
+                <div class="h1_clubvenue">
+                    <h1>VOLUME VILLAGE</h1>
+                </div>
+                <div class="tekst_clubvenue bottom">
+                    <p>Workshops. Masterclasses. Konferencer. Hygge.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <script src="script.js" defer></script>
 </body>
+</html>
