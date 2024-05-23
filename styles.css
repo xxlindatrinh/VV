@@ -1055,7 +1055,7 @@ flex:2;
   background-color: #1b1919; 
   position: absolute;
   top: calc(50% + 450px); 
-  left: 185px; 
+  left: 10.5%; 
   padding: 40px;
 }
 
@@ -1146,7 +1146,7 @@ flex:2;
 .spotify-player {
   position: absolute;
   top: calc(50% + 450px); 
-  right: 200px; 
+  right: 10%; 
 }
 .eventto-box {
   position: absolute;
@@ -1154,7 +1154,7 @@ flex:2;
   height: 280px;
   background-color: #1b1919; 
   top: calc(50% + 850px); 
-  right: 200px; 
+  right: 10%; 
 }
 
 .section-title {
@@ -1761,6 +1761,7 @@ textarea.form-field {
       bottom: 14px; /* Adjust as necessary for desired bottom margin */
     }
 
+    
     /*----------------footer----------------*/
     
 }
